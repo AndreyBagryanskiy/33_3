@@ -16,15 +16,16 @@ int main(){
     reg1.print();
 
 
-    Registry<std::string, int> reg2;
+    Registry<std::string, int>* reg2 = new Registry<std::string, int>;
     std::cout << "Step3\n";
-    reg2.add("banana", 10);
-    reg2.add("apple", 5);
-    reg2.add("banana", 47);
-    reg2.print();
+    reg2->add("banana", 10);
+    reg2->add("apple", 5);
+    reg2->add("banana", 47);
+    reg2->print();
 
     std::cout << "Step4\n";
-    reg2.find("banana");
+    reg2->find("banana");
     std::cout << "Step5\n";
-    reg2.find("potato");
+    reg2->find("potato");
+    delete reg2;
 }
